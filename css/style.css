@@ -1,0 +1,104 @@
+.cloud-wrap{
+  position: relative;
+
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.cloud-wrap:before,
+.cloud-wrap:after{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: currentColor;
+}
+
+.cloud-wrap:before{
+  transform: translate(-50%,-50%) rotate(65deg);
+}
+
+.cloud-wrap:after{
+  transform: translate(-50%,-50%) rotate(-65deg);
+}
+
+.cloud-wrap .cloud{
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: currentColor;
+
+  transform: rotate(0);
+}
+
+.cloud-wrap .cloud:before,
+.cloud-wrap .cloud:after{
+  position: absolute;
+  content: "";
+
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: inherit;
+}
+
+.cloud-wrap .cloud:before{
+  transform: rotate(15deg);
+}
+
+.cloud-wrap .cloud:after{
+  transform: rotate(45deg);
+}
+
+
+.cloud-wrap .text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: 0;
+  font-size: 1.4em;
+  color: white;
+
+  white-space: nowrap;
+
+  transform: translate(-50%,-50%);
+  z-index: 2;
+}
+
+
+.lightseagreen{
+  color: lightseagreen;
+}
+
+.olivedrab{
+  color: olivedrab; 
+} 
+
+
+.cloud-wrap:hover,
+.cloud-wrap:active{
+  animation: cloud_anim 1s ease-in-out infinite alternate;  
+}
+
+@keyframes cloud_anim{
+  0%{
+    transform: translateX(-5%);
+  }
+
+  100%{
+    transform: translateX(5%);
+  }
+}
